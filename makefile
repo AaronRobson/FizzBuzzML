@@ -1,4 +1,4 @@
-all: clean fizzbuzz test
+all: clean fizzbuzz check
 
 fizzbuzz: library.cmx main.cmx
 	ocamlopt -o fizzbuzz library.cmx main.cmx
@@ -11,6 +11,8 @@ main.cmx:
 
 test:
 	ocamlfind ocamlc -o test -package oUnit -linkpkg -g library.ml test.ml
+
+check: test
 	./test
 
 clean:

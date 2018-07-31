@@ -35,7 +35,7 @@ ocamlopt -o fizzbuzz library.cmx main.cmx
 
 # Compile and run tests
 ```
-make tests
+make check
 ```
 
 # Compile and run tests - manual
