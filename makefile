@@ -1,4 +1,4 @@
-all: clean build check
+all: build check
 
 build: library.cmx main.cmx
 	ocamlopt -o fizzbuzz library.cmx main.cmx
