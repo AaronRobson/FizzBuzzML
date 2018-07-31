@@ -21,6 +21,12 @@ sudo apt-get install libounit-ocaml-dev
 
 # Compile and run executable
 ```
+make
+./fizzbuzz
+```
+
+# Compile and run executable - manual
+```
 ocamlopt -c library.ml
 ocamlopt -c main.ml
 ocamlopt -o fizzbuzz library.cmx main.cmx
@@ -28,6 +34,11 @@ ocamlopt -o fizzbuzz library.cmx main.cmx
 ```
 
 # Compile and run tests
+```
+make tests
+```
+
+# Compile and run tests - manual
 ```
 ocamlfind ocamlc -o test -package oUnit -linkpkg -g library.ml test.ml
 ./test
