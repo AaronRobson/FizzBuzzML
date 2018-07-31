@@ -1,6 +1,8 @@
 all: build check
 
-build: library.cmx main.cmx
+build: fizzbuzz
+
+fizzbuzz: library.cmx main.cmx
 	ocamlopt -o fizzbuzz library.cmx main.cmx
 
 library.cmx:
