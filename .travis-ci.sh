@@ -11,7 +11,7 @@ case "$OCAML_VERSION,$OPAM_VERSION" in
 *) echo Unknown $OCAML_VERSION,$OPAM_VERSION; exit 1 ;;
 esac
 
-# echo "yes" | sudo add-apt-repository ppa:$ppa
+echo "yes" | sudo add-apt-repository ppa:$ppa
 sudo apt-get update -qq
 sudo apt-get install -qq ocaml ocaml-native-compilers camlp4-extra opam
 export OPAMYES=1
