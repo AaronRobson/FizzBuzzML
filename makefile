@@ -30,12 +30,6 @@ tests: test
 check: test
 
 clean:
-	rm -f *.cache
-	rm -f *.cmi
-	rm -f *.cmo
-	rm -f *.cmx
-	rm -f *.o
-	rm -f fizzbuzz
-	rm -f fizzbuzztests
+	rm -f {*.cache,*.cmi,*.cmo,*.cmx,*.o,fizzbuzz,fizzbuzztests}
 
 clear: clean
