@@ -35,7 +35,7 @@ clean:
 	rm -f *.cmo
 	rm -f *.cmx
 	rm -f *.o
+	rm -f fizzbuzz
 	rm -f fizzbuzztests
-	rm -f test
 
 clear: clean
