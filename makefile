@@ -1,8 +1,14 @@
-.PHONY: all build check clean
+.PHONY: all build buildall buildmain buildtests test check clean clean
 
-all: build check
+all: build
 
-build: fizzbuzz
+build: buildall
+
+buildall: buildmain buildtests
+
+buildmain: fizzbuzz
+
+buildtests: fizzbuzztests
 
 fizzbuzz: library.cmx main.cmx
 	ocamlopt -o fizzbuzz library.cmx main.cmx
@@ -13,11 +19,15 @@ library.cmx:
 main.cmx:
 	ocamlopt -c main.ml
 
-test:
-	ocamlfind ocamlc -o test -package oUnit -linkpkg -g library.ml test.ml
+fizzbuzztests:
+	ocamlfind ocamlc -o fizzbuzztests -package oUnit -linkpkg -g library.ml test.ml
+
+test: buildtests
+	./fizzbuzztests
+
+tests: test
 
 check: test
-	./test
 
 clean:
 	rm -f *.cache
@@ -25,5 +35,7 @@ clean:
 	rm -f *.cmo
 	rm -f *.cmx
 	rm -f *.o
-	rm -f fizzbuzz
+	rm -f fizzbuzztests
 	rm -f test
+
+clear: clean
