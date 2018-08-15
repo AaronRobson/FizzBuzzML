@@ -1,3 +1,5 @@
+.PHONY: all build check clean
+
 all: build check
 
 build: fizzbuzz
