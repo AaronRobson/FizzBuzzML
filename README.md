@@ -40,6 +40,6 @@ make check
 
 # Compile and run tests - manual
 ```
-ocamlfind ocamlc -o test -package oUnit -linkpkg -g library.ml test.ml
-./test
+ocamlfind ocamlc -o fizzbuzztests -package oUnit -linkpkg -g library.ml test.ml
+./fizzbuzztests
 ```

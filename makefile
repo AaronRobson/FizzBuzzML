@@ -1,4 +1,4 @@
-.PHONY: all build buildall buildmain buildtests test check clean clean
+.PHONY: all build buildall buildmain buildtests test tests check clean clear
 
 all: build
 
@@ -30,6 +30,6 @@ tests: test
 check: test
 
 clean:
-	rm -f {*.cache,*.cmi,*.cmo,*.cmx,*.o,fizzbuzz,fizzbuzztests}
+	rm -f *.cache *.cmi *.cmo *.cmx *.o fizzbuzz fizzbuzztests
 
 clear: clean
