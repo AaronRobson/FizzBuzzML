@@ -25,3 +25,6 @@ setup.log
 *.cache
 fizzbuzz
 fizzbuzztests
+
+# Test logs
+*.log
