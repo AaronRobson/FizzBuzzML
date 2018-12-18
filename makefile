@@ -19,7 +19,7 @@ library.cmx:
 main.cmx:
 	ocamlopt -c main.ml
 
-fizzbuzztests:
+fizzbuzztests: library.ml test.ml
 	ocamlfind ocamlc -o fizzbuzztests -package oUnit -linkpkg -g library.ml test.ml
 
 test: buildtests
