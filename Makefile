@@ -1,4 +1,4 @@
-.PHONY: all build buildall buildmain buildtests test clean
+.PHONY: all build buildtests test clean
 
 .DEFAULT_GOAL := all
 
@@ -21,11 +21,7 @@ ifeq ($(detected_OS), Cygwin)
 	fizzbuzz_executable := fizzbuzz.exe
 endif
 
-build: buildall
-
-buildall: buildmain buildtests
-
-buildmain: $(fizzbuzz_executable)
+build: $(fizzbuzz_executable)
 
 buildtests: fizzbuzztests
 
