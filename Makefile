@@ -1,7 +1,6 @@
-.PHONY: all build buildtests test clean
-
 .DEFAULT_GOAL := all
 
+.PHONY: all
 all: build test
 
 ifeq '$(findstring ;,$(PATH))' ';'
@@ -21,9 +20,11 @@ ifeq ($(detected_OS), Cygwin)
 	fizzbuzz_executable := fizzbuzz.exe
 endif
 
+.PHONY: clean
 clean:
 	rm -f *.cache *.cmi *.cmo *.cmx *.o ${fizzbuzz_executable} fizzbuzztests
 
+.PHONY: build
 build: $(fizzbuzz_executable)
 
 $(fizzbuzz_executable): library.cmx main.cmx
@@ -32,9 +33,11 @@ $(fizzbuzz_executable): library.cmx main.cmx
 %.cmx: %.ml
 	ocamlopt -c $<
 
+.PHONY: test
 test: buildtests
 	./fizzbuzztests
 
+.PHONY: buildtests
 buildtests: fizzbuzztests
 
 fizzbuzztests: library.ml test.ml
