@@ -24,6 +24,7 @@ setup.log
 
 *.cache
 fizzbuzz
+fizzbuzz.exe
 fizzbuzztests
 
 # Test logs
