@@ -6,7 +6,7 @@ An implementation of FizzBuzz written in OCaml.
 [https://blog.codinghorror.com/why-cant-programmers-program/](https://blog.codinghorror.com/why-cant-programmers-program/)
 
 # Requirements
-```
+```bash
 sudo apt-get install opam
 opam init --yes
 opam config env
@@ -20,13 +20,13 @@ sudo apt-get install libounit-ocaml-dev
 ```
 
 # Compile and run executable
-```
+```bash
 make
 ./fizzbuzz
 ```
 
 # Compile and run executable - manual
-```
+```bash
 ocamlopt -c library.ml
 ocamlopt -c main.ml
 ocamlopt -o fizzbuzz library.cmx main.cmx
@@ -34,12 +34,12 @@ ocamlopt -o fizzbuzz library.cmx main.cmx
 ```
 
 # Compile and run tests
-```
+```bash
 make check
 ```
 
 # Compile and run tests - manual
-```
+```bash
 ocamlfind ocamlc -o fizzbuzztests -package oUnit -linkpkg -g library.ml test.ml
 ./fizzbuzztests
 ```
