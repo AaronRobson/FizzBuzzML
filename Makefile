@@ -20,9 +20,16 @@ ifeq ($(detected_OS), Cygwin)
 	fizzbuzz_executable := fizzbuzz.exe
 endif
 
+clean_files := *.cache *.cmi *.cmo *.cmx *.o ${fizzbuzz_executable} fizzbuzztests
+
+clean_command := rm -f ${clean_files}
+ifeq ($(detected_OS), Windows)
+	clean_command := del /q ${clean_files} >nul 2>&1
+endif
+
 .PHONY: clean
 clean:
-	rm -f *.cache *.cmi *.cmo *.cmx *.o ${fizzbuzz_executable} fizzbuzztests
+	${clean_command}
 
 .PHONY: build
 build: $(fizzbuzz_executable)
