@@ -2,7 +2,7 @@
 
 .DEFAULT_GOAL := all
 
-all: build
+all: build test
 
 ifeq '$(findstring ;,$(PATH))' ';'
   detected_OS := Windows
