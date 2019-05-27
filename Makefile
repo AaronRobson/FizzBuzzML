@@ -33,6 +33,10 @@ $(fizzbuzz_executable): library.cmx main.cmx
 %.cmx: %.ml
 	ocamlopt -c $<
 
+.PHONY: run
+run: build
+	./$(fizzbuzz_executable)
+
 .PHONY: test
 test: buildtests
 	./fizzbuzztests
