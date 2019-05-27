@@ -21,9 +21,10 @@ ifeq ($(detected_OS), Cygwin)
 	fizzbuzz_executable := fizzbuzz.exe
 endif
 
-build: $(fizzbuzz_executable)
+clean:
+	rm -f *.cache *.cmi *.cmo *.cmx *.o ${fizzbuzz_executable} fizzbuzztests
 
-buildtests: fizzbuzztests
+build: $(fizzbuzz_executable)
 
 $(fizzbuzz_executable): library.cmx main.cmx
 	ocamlopt -o fizzbuzz library.cmx main.cmx
@@ -31,11 +32,10 @@ $(fizzbuzz_executable): library.cmx main.cmx
 %.cmx: %.ml
 	ocamlopt -c $<
 
-fizzbuzztests: library.ml test.ml
-	ocamlfind ocamlc -o fizzbuzztests -package oUnit -linkpkg -g library.ml test.ml
-
 test: buildtests
 	./fizzbuzztests
 
-clean:
-	rm -f *.cache *.cmi *.cmo *.cmx *.o ${fizzbuzz_executable} fizzbuzztests
+buildtests: fizzbuzztests
+
+fizzbuzztests: library.ml test.ml
+	ocamlfind ocamlc -o fizzbuzztests -package oUnit -linkpkg -g library.ml test.ml
