@@ -1,4 +1,4 @@
-.PHONY: all build buildall buildmain buildtests test tests check clean
+.PHONY: all build buildall buildmain buildtests test check clean
 
 all: build
 
@@ -24,8 +24,6 @@ fizzbuzztests: library.ml test.ml
 
 test: buildtests
 	./fizzbuzztests
-
-tests: test
 
 check: test
 
