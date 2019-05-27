@@ -15,11 +15,8 @@ buildtests: fizzbuzztests
 fizzbuzz: library.cmx main.cmx
 	ocamlopt -o fizzbuzz library.cmx main.cmx
 
-library.cmx:
-	ocamlopt -c library.ml
-
-main.cmx:
-	ocamlopt -c main.ml
+%.cmx: %.ml
+	ocamlopt -c $<
 
 fizzbuzztests: library.ml test.ml
 	ocamlfind ocamlc -o fizzbuzztests -package oUnit -linkpkg -g library.ml test.ml
