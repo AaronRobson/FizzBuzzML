@@ -1,4 +1,4 @@
-.PHONY: all build buildall buildmain buildtests test check clean
+.PHONY: all build buildall buildmain buildtests test clean
 
 .DEFAULT_GOAL := all
 
@@ -40,8 +40,6 @@ fizzbuzztests: library.ml test.ml
 
 test: buildtests
 	./fizzbuzztests
-
-check: test
 
 clean:
 	rm -f *.cache *.cmi *.cmo *.cmx *.o ${fizzbuzz_executable} fizzbuzztests
