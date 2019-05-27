@@ -19,27 +19,24 @@ sudo apt-get install ocaml-batteries-included
 sudo apt-get install libounit-ocaml-dev
 ```
 
-# Compile and run executable
+# Make targets
+
+## Build and run tests
 ```bash
 make
-./fizzbuzz
 ```
 
-# Compile and run executable - manual
+## Run executable
 ```bash
-ocamlopt -c library.ml
-ocamlopt -c main.ml
-ocamlopt -o fizzbuzz library.cmx main.cmx
-./fizzbuzz
+make run
 ```
 
-# Compile and run tests
+## Run tests
 ```bash
-make check
+make tests
 ```
 
-# Compile and run tests - manual
+## Clear up
 ```bash
-ocamlfind ocamlc -o fizzbuzztests -package oUnit -linkpkg -g library.ml test.ml
-./fizzbuzztests
+make clean
 ```
