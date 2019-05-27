@@ -1,5 +1,7 @@
 .PHONY: all build buildall buildmain buildtests test check clean
 
+.DEFAULT_GOAL := all
+
 all: build
 
 build: buildall
